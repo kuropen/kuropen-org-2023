@@ -1,0 +1,9 @@
+name = "kporg-backend"
+main = "src/index.ts"
+compatibility_date = "2023-01-09"
+
+[vars]
+PGN_API_HOST = "https://cms2.kuropen.org"
+
+[triggers]
+crons = [ "0 17 * * *" ]
