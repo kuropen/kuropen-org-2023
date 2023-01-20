@@ -1,2 +1,3 @@
 node_modules
 planetscale-secret.json
+.dev.vars

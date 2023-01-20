@@ -1,6 +1,11 @@
 {
+    "name": "@kuropen/kuropen-org-2023",
     "private": true,
     "workspaces": [
-        "apps/*"
-    ]
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "backend.deploy": "yarn workspace @kuropen/kporg-backend deploy"
+    }
 }

@@ -1,5 +1,6 @@
-import { CrawlTask, FetchApiParams, FilterConditions, PaginationParams, StrapiData, StrapiResult, WhatsNewContent } from "../@types";
+import { FetchApiParams, FilterConditions, PaginationParams, StrapiData, StrapiResult, WhatsNewContent } from "@kuropen/kporg-types";
 import * as qs from "qs"
+import { CrawlTask } from "../@types";
 
 class PenguinoneCmsTask implements CrawlTask {
     private apiHost: string

@@ -1,9 +1,10 @@
 import { connect, ExecutedQuery, Config } from "@planetscale/database/dist"
 import Env from "../@types/env"
-import { WhatsNewContent, CrawlTask } from "../@types"
+import { CrawlTask } from "../@types"
 import generateQueryParam from "../util/generateQueryParam"
 import NoteTask from "./noteTask"
 import PenguinoneCmsTask from "./penguinoneCmsTask"
+import { WhatsNewContent } from "@kuropen/kporg-types"
 
 /**
  * Runs aggregate tasks.

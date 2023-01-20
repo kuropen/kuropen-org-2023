@@ -10,7 +10,7 @@
  * Learn more at https://developers.cloudflare.com/workers/runtime-apis/scheduled-event/
  */
 
-import { WhatsNewListSelectOptions } from "./@types";
+import { WhatsNewListSelectOptions } from "@kuropen/kporg-types";
 import Env from "./@types/env"
 import getWhatsNewList from "./services/whatsNewListService";
 import runAggregateTask from "./tasks"

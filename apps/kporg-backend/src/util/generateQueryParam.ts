@@ -1,4 +1,4 @@
-import { WhatsNewContent, WhatsNewContentOnDatabase } from "../@types"
+import { WhatsNewContent, WhatsNewContentOnDatabase } from "@kuropen/kporg-types"
 import { format } from "date-fns"
 
 function generateQueryParam(content: WhatsNewContent): WhatsNewContentOnDatabase {

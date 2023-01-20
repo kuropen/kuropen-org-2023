@@ -1,5 +1,6 @@
-import { CrawlTask, WhatsNewContent } from "../@types"
+import { WhatsNewContent } from "@kuropen/kporg-types"
 import { read } from '@extractus/feed-extractor'
+import { CrawlTask } from "../@types"
 
 const NOTE_RSS_URL = 'https://note.com/penguinote/rss' as const
 

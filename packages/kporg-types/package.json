@@ -1,0 +1,10 @@
+{
+  "name": "@kuropen/kporg-types",
+  "version": "1.0.0",
+  "main": "index.d.js",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
+}
