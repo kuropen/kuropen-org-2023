@@ -9,6 +9,8 @@
     ],
     "scripts": {
         "backend.deploy": "yarn workspace @kuropen/kporg-backend deploy",
+        "frontend.build": "yarn workspace @kuropen/kporg-frontend build",
+        "frontend.ci": "yarn licenses.generate && yarn frontend.build",
         "licenses.generate": "yarn licenses generate-disclaimer > apps/kporg-frontend/public/licenses.txt"
     },
     "license": "MPL-2.0"

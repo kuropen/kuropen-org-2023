@@ -11,6 +11,7 @@ import Env from "../@types/env"
 type WhatsNewListSelectParam = {
     limit?: number
     offset?: number
+    source?: string
 }
 
 /**
@@ -19,7 +20,7 @@ type WhatsNewListSelectParam = {
  * @returns JSON string
  */
 async function getWhatsNewList(env: Env, options: WhatsNewListSelectOptions): Promise<string> {
-    const { limit, offset } = options
+    const { limit, offset, source } = options
 
     if (env.PS_HOST && env.PS_USER && env.PS_PASSWORD) {
         const psConfig: Config = {
@@ -32,7 +33,15 @@ async function getWhatsNewList(env: Env, options: WhatsNewListSelectOptions): Pr
 
         let params: WhatsNewListSelectParam = {}
 
-        let query = 'SELECT `source`, `title`, `date`, `is_external`, `url` FROM `whatsnew` WHERE `date` < NOW() ORDER BY `date` DESC'
+        const whereConditions = [
+            '`date` < NOW()'
+        ]
+        if (source) {
+            whereConditions.push('`source` = :source')
+            params.source = source
+        }
+
+        let query = 'SELECT `source`, `title`, `date`, `is_external`, `url` FROM `whatsnew` WHERE ' + whereConditions.join(' AND ') + ' ORDER BY `date` DESC'
         if (limit) {
             query += ' LIMIT :limit'
             params.limit = limit
