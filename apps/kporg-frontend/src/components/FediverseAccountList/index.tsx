@@ -4,8 +4,9 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-import { useState } from "react"
+import React, { useState } from "react"
 import Accounts from '../../assets/accounts.json'
+import ClipboardButton from "./ClipboardButton"
 import './listStyle.css'
 
 /**
@@ -42,10 +43,11 @@ export default function () {
                                     <tr className={isActive ? '' : 'text-gray-500'} key={accountId}>
                                         <td>{serverName} ({serverSystem})</td>
                                         <td>
-                                            <div className="flex flex-row">
+                                            <div className="flex flex-row gap-1">
                                                 <p>
                                                     {link ? <a href={linkTo} target="_blank" className="underline">{accountId}</a> : accountId}
                                                 </p>
+                                                { isActive ? <ClipboardButton text={accountId} /> : <React.Fragment /> }
                                             </div>
                                         </td>
                                         <td>{remarks}</td>
