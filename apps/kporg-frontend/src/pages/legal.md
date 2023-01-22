@@ -6,7 +6,7 @@ title: "Legal Notice"
 以下は、当サイトで使用しているコンポーネントなどの知的財産権の表示です。
 
 ## 当サイトの著作権情報
-All rights reserved. Copyright (C) 2023 Kuropen (Hirochika Yuda).
+Copyright (C) 2023 Kuropen (Hirochika Yuda).
 
 - 当サイトを生成するためのソースコードおよび当サイトのバックエンドサーバーのソースコードであって、GitHubまたはGitLabのKuropenのリポジトリで公開されているものは、[Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/)で利用できます。
 - 生成されたこのサイトのHTMLドキュメントそのもの、および付随する画像類（別に著作者または利用条件の明記がないこと）の利用条件は、[クリエイティブ・コモンズ 表示-非営利-継承 4.0 (CC-BY-NC-SA-4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)とします。
