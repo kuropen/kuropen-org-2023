@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import getPgnCmsContent from '../../utils/getPgnCmsContent'
+import getWhatsNew from '../../utils/getWhatsNew'
+import {format} from 'date-fns'
+import {unified} from 'unified'
+import remarkParse from 'remark-parse'
+import remarkGfm from 'remark-gfm'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
+
+interface PgnArchivesStaticPath {
+    params: {
+        slug: string
+    }
+}
+export async function getStaticPaths() {
+    const list = await getWhatsNew({source: 'PGN-CMS'})
+    return list.map((element) => {
+        const pathDef: PgnArchivesStaticPath = {
+            params: {
+                slug: element.url
+            }
+        }
+        return pathDef
+    })
+}
+
+const { slug } = Astro.params
+const contentArray = await getPgnCmsContent({slug: slug || ''})
+if (!contentArray) {
+    throw "Page not found"
+}
+const content = contentArray[0]
+const articleDate = new Date(content.attributes.date)
+
+const mdContent = await unified().use(remarkParse).use(remarkGfm).use(remarkRehype).use(rehypeStringify).process(content.attributes.body)
+---
+<Layout title={content.attributes.title}>
+    <section class="max-w-prose mx-auto">
+        <div class="p-4 border rounded-lg shadow-lg mb-2">
+            <div class="pb-4 mb-4 border-b-2">
+                <h2 class="text-xl">{content.attributes.title}</h2>
+                <aside>
+                    <p>{format(articleDate, 'yyyy/MM/dd')}</p>
+                </aside>
+            </div>
+            <div class="prose" set:html={mdContent}>
+            </div>
+        </div>
+        <div class="flex justify-start gap-2">
+            <a href="/" class="flex flex-row items-center gap-2 rounded-lg shadow-lg p-4 hover:bg-indigo-200">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                </svg>                  
+                <div>トップページへ</div>
+            </a>
+            <a href="/pgn-archives/" class="flex flex-row items-center gap-2 rounded-lg shadow-lg p-4 hover:bg-indigo-200">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+                <div>書いたもの一覧へ</div>
+            </a>
+        </div>
+    </section>
+</Layout>

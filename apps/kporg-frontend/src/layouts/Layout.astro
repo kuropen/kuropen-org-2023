@@ -1,0 +1,53 @@
+---
+export interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title ? `${title} - ` : ''}Kuropen.org</title>
+	</head>
+	<body>
+		<div class="container mx-auto">
+			<header class="flex flex-row p-4 mb-4 rounded-b-lg shadow-lg items-center bg-blue-300 border-b border-l border-r">
+				<h1 class="text-2xl orbitron"><a href="/" class="hover:underline">Kuropen.org</a></h1>
+			</header>
+			<main>
+				<slot />
+			</main>
+			<footer class="p-4 mt-4 text-center">
+				<p class="text-sm">
+					Copyright &copy; 2018-2023 Kuropen. <br />
+					Powered by <a href="https://astro.build/">Astro</a>, <a href="https://tailwindcss.com/">Tailwind CSS</a>,
+					<a href="https://heroicons.com/">Heroicons</a>, <a href="https://simpleicons.org/">Simple Icons</a>.
+				</p>
+				<nav class="text-sm mt-1">
+					<ul class="grid grid-cols-2 w-fit mx-auto">
+						<li class="border-r border-gray-400"><a href="/legal" class="underline">著作権に関する表示</a></li>
+						<li class="pl-2"><a href="/privacy" class="underline">プライバシーポリシー</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+	</body>
+</html>
+<style is:global>
+	@import url(https://fonts.bunny.net/css?family=orbitron:700);
+	:root {
+		font-family: 'Helvetica Neue', 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	}
+	.orbitron {
+		font-family: 'Orbitron', sans-serif;
+	}
+	.max-w-prose {
+		max-width: 65ch;
+	}
+</style>

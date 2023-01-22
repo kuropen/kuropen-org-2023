@@ -1,8 +1,9 @@
 {
   "name": "@kuropen/kporg-types",
+  "description": "Type definition for kuropen.org apps",
   "version": "1.0.0",
   "main": "index.d.js",
-  "license": "AGPL-3.0-only",
+  "license": "MPL-2.0",
   "private": true,
   "dependencies": {
     "typescript": "^4.9.4"

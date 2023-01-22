@@ -1,6 +1,7 @@
 {
   "name": "@kuropen/kporg-backend",
-  "version": "0.0.0",
+  "description": "kuropen.org Backend",
+  "version": "1.0.0",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20221111.1",
     "@extractus/feed-extractor": "^6.2.0",
@@ -16,5 +17,5 @@
     "dev": "wrangler dev",
     "deploy": "wrangler publish"
   },
-  "license": "AGPL-3.0-only"
+  "license": "MPL-2.0"
 }

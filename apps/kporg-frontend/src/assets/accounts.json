@@ -1,0 +1,65 @@
+[
+    {
+        "serverName": "MICROPEN",
+        "serverSystem": "Misskey",
+        "accountId": "@kuropen@mi.kuropen.org",
+        "isActive": true,
+        "link": true
+    },
+    {
+        "serverName": "Fedibird",
+        "serverSystem": "Mastodon",
+        "accountId": "@kuropen@fedibird.com",
+        "isActive": true,
+        "link": true,
+        "remarks": "現在サブアカウント"
+    },
+    {
+        "serverName": "銀河丼",
+        "serverSystem": "Mastodon",
+        "accountId": "@kuropen@gingadon.com",
+        "isActive": false,
+        "link": true,
+        "remarks": "Fedibirdに引っ越し"
+    },
+    {
+        "serverName": "まちトドン",
+        "serverSystem": "Mastodon",
+        "accountId": "@kuropen@matitodon.com",
+        "isActive": false,
+        "link": true,
+        "remarks": "Fedibirdに引っ越し"
+    },
+    {
+        "serverName": "mstdn.jp",
+        "serverSystem": "Mastodon",
+        "accountId": "@kuropen@mstdn.jp",
+        "isActive": false,
+        "link": true,
+        "remarks": "Fedibirdに引っ越し"
+    },
+    {
+        "serverName": "Penguinone Annex",
+        "serverSystem": "Dolphin",
+        "accountId": "@krpn@kuropen.me",
+        "isActive": false,
+        "link": false,
+        "remarks": "サーバー廃止によりアカウント消滅"
+    },
+    {
+        "serverName": "misskey.io",
+        "serverSystem": "Misskey",
+        "accountId": "@kuropen@misskey.io",
+        "isActive": false,
+        "link": false,
+        "remarks": "システム障害によりアカウント消滅"
+    },
+    {
+        "serverName": "becodon",
+        "serverSystem": "Mastodon",
+        "accountId": "@kuropen@don.akabe.co",
+        "isActive": false,
+        "link": false,
+        "remarks": "サーバー廃止によりアカウント消滅"
+    }
+]

@@ -1,13 +1,7 @@
-/**
- * Welcome to Cloudflare Workers! This is your first scheduled worker.
- *
- * - Run `wrangler dev --local` in your terminal to start a development server
- * - Run `curl "http://localhost:8787/cdn-cgi/mf/scheduled"` to trigger the scheduled event
- * - Go back to the console to see what your worker has logged
- * - Update the Cron trigger in wrangler.toml (see https://developers.cloudflare.com/workers/wrangler/configuration/#triggers)
- * - Run `wrangler publish --name my-worker` to publish your worker
- *
- * Learn more at https://developers.cloudflare.com/workers/runtime-apis/scheduled-event/
+/*!
+ * Copyright (C) 2023 Kuropen.
+ * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. 
+ * If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
 import { WhatsNewListSelectOptions } from "@kuropen/kporg-types";
@@ -32,6 +26,18 @@ export default {
 				headers: {
 					'Content-Type': 'application/json',
 				}
+			})
+		}
+
+		if (pathname === '/fb') {
+			if (env.FB_URL) {
+				return Response.redirect(env.FB_URL, 303)
+			}
+			return new Response('Not found.', {
+				headers: {
+					'Content-Type': 'text/plain',
+				},
+				status: 404,
 			})
 		}
 

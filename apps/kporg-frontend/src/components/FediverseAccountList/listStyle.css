@@ -1,0 +1,9 @@
+.account-list tr:not(.border-b-2) {
+    @apply border-b border-neutral-500;
+}
+.account-list tr td:nth-child(2n) {
+    @apply border-l border-r border-neutral-500;
+}
+.account-list th, .account-list td {
+    @apply p-1;
+}

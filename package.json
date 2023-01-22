@@ -1,11 +1,15 @@
 {
     "name": "@kuropen/kuropen-org-2023",
+    "description": "kuropen.org Frontend",
+    "version": "1.0.0",
     "private": true,
     "workspaces": [
         "apps/*",
         "packages/*"
     ],
     "scripts": {
-        "backend.deploy": "yarn workspace @kuropen/kporg-backend deploy"
-    }
+        "backend.deploy": "yarn workspace @kuropen/kporg-backend deploy",
+        "licenses.generate": "yarn licenses generate-disclaimer > apps/kporg-frontend/public/licenses.txt"
+    },
+    "license": "MPL-2.0"
 }
