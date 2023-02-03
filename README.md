@@ -15,4 +15,3 @@ Copyright (C) 2023 Kuropen (Hirochika Yuda).
 ## Included materials
 This repository includes following materials for use in the website:
 - [Misskey logomark](https://misskey-hub.net/appendix/assets.html): Copyright © 2021 syuilo and other contributors. Licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-- [Heroicons](https://heroicons.com/): Copyright (c) 2020 Refactoring UI Inc. Licensed under the [MIT License](https://github.com/tailwindlabs/heroicons/blob/master/LICENSE).
