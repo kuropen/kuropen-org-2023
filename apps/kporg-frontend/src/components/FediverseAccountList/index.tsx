@@ -5,7 +5,7 @@
  */
 
 import React, { useState } from "react"
-import Accounts from '../../assets/accounts.json'
+import FediverseAccounts from "../../utils/FediverseAccounts"
 import ClipboardButton from "./ClipboardButton"
 import './listStyle.css'
 
@@ -33,26 +33,23 @@ export default function () {
                         <th>備考</th>
                     </tr>
                     {
-                        Accounts
-                            .filter(({isActive}) => isInactiveShown ? true : isActive)
-                            .map(({serverName, serverSystem, accountId, isActive, link, remarks}) => {
-                                const accountIdElements = (accountId.charAt(0) === '@' ? accountId.substring(1) : accountId)
-                                    .split('@')
-                                const linkTo = `https://${accountIdElements[1]}/@${accountIdElements[0]}`
-                                return (
-                                    <tr className={isActive ? '' : 'text-gray-500'} key={accountId}>
-                                        <td>{serverName} ({serverSystem})</td>
-                                        <td>
-                                            <div className="flex flex-row gap-1">
-                                                <p>
-                                                    {link ? <a href={linkTo} target="_blank" className="underline">{accountId}</a> : accountId}
-                                                </p>
-                                                { isActive ? <ClipboardButton text={accountId} /> : <React.Fragment /> }
-                                            </div>
-                                        </td>
-                                        <td>{remarks}</td>
-                                    </tr>
-                                )
+                        FediverseAccounts
+                        .getAccounts({isActive: !isInactiveShown})
+                        .map(({serverName, serverSystem, accountId, isActive, link, remarks, linkTo}) => {
+                            return (
+                                <tr className={isActive ? '' : 'text-gray-500'} key={accountId}>
+                                    <td>{serverName} ({serverSystem})</td>
+                                    <td>
+                                        <div className="flex flex-row gap-1">
+                                            <p>
+                                                {link ? <a href={linkTo} target="_blank" className="underline">{accountId}</a> : accountId}
+                                            </p>
+                                            { isActive ? <ClipboardButton text={accountId} /> : <React.Fragment /> }
+                                        </div>
+                                    </td>
+                                    <td>{remarks}</td>
+                                </tr>
+                            )
                         })
                     }
                 </table>

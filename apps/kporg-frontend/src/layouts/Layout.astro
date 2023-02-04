@@ -1,9 +1,13 @@
 ---
+import FediverseAccounts from '../utils/FediverseAccounts'
+
 export interface Props {
 	title?: string;
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
+
+const activeFediverseAccounts = FediverseAccounts.getAccounts({isActive: true})
 ---
 
 <!DOCTYPE html>
@@ -14,6 +18,7 @@ const { title } = Astro.props;
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title ? `${title} - ` : ''}Kuropen.org</title>
+		{activeFediverseAccounts.map(({linkTo}) => (<link rel="me" href={linkTo} />))}
 	</head>
 	<body>
 		<div class="container mx-auto">
