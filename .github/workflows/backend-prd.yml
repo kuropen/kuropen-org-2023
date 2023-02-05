@@ -16,5 +16,9 @@ jobs:
       with:
         node-version: 18
         cache: 'yarn'
-    - run: yarn install
-    - run: yarn backend.deploy
+    - name: Intalling dependencies
+      run: yarn install
+    - name: Deploy to Cloudflare Workers
+      run: yarn backend.deploy
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
