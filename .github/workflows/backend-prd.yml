@@ -16,4 +16,5 @@ jobs:
       with:
         node-version: 18
         cache: 'yarn'
+    - run: yarn install
     - run: yarn backend.deploy
