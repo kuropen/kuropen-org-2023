@@ -28,8 +28,8 @@ export default async function ({ slug }: GetPgnCmsContentParams) {
 
     const filterConditions: FilterConditions = {
         slug: {
-            $eq: slug
-        }
+            $eq: slug,
+        },
     }
 
     const apiParams: FetchApiParams = {

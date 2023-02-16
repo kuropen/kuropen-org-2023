@@ -7,7 +7,7 @@
 type Source = 'PGN-CMS' | 'Note'
 
 interface WhatsNewContent {
-    source: Source
+    source: Source | string
     title?: string
     date?: string
     is_external: boolean
@@ -28,7 +28,9 @@ type PenguinonePostAttribute = {
     publishedAt: string
 }
 
-type StrapiData<T extends Partial<PenguinonePostAttribute> = PenguinonePostAttribute> = {
+type StrapiDataElement = PenguinonePostAttribute
+
+type StrapiData<T extends Partial<StrapiDataElement> = PenguinonePostAttribute> = {
     id: number
     attributes: T
 }
@@ -44,8 +46,8 @@ type StrapiMeta = {
     pagination: StrapiPagination
 }
 
-type StrapiResult = {
-    data: Array<StrapiData>
+type StrapiResult<T extends Partial<StrapiDataElement> = PenguinonePostAttribute> = {
+    data: Array<StrapiData<T>>
     meta: StrapiMeta
 }
 
@@ -56,8 +58,8 @@ type FetchDataParams = {
     fields?: string[]
 }
 
-type FetchDataResult = {
-    allData: StrapiData[]
+type FetchDataResult<T extends Partial<StrapiDataElement> = PenguinonePostAttribute> = {
+    allData: StrapiData<T>[]
     hasNextPage: boolean
 }
 
@@ -67,14 +69,34 @@ type PaginationParams = {
     withCount?: boolean
 }
 
-type FilterConditions = {
-    slug?: {
-        $eq: string
+type SingleFilterCondition = {
+    [K in keyof StrapiDataElement | "id"]?: {
+        $eq?: string | number
+        $eqi?: string
+        $ne?: string | number
+        $lt?: string | number
+        $lte?: string | number
+        $gt?: string | number
+        $gte?: string | number
+        $in?: string[] | number[]
+        $notIn?: string[] | number[]
+        $contains?: string
+        $notContains?: string
+        $containsi?: string
+        $notContainsi?: string
+        $null?: boolean
+        $notNull?: boolean
+        $between?: string | number
+        $startsWith?: string
+        $startsWithi?: string
+        $endsWith?: string
+        $endsWithi?: string
     }
-    date?: {
-        $lte: string
-    }
-    // conditions for other parameters and other operators should be written on-demand
+}
+
+type FilterConditions = SingleFilterCondition | {
+    $or?: SingleFilterCondition[]
+    $and?: SingleFilterCondition[]
 }
 
 type FetchApiParams = {
