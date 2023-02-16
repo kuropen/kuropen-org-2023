@@ -22,8 +22,10 @@ export default function () {
                 この表は横スクロール可能です。
             </div>
             <div className="flex flex-row gap-2 items-center">
-                <input type="checkbox" name="ShowInactiveCheck" onChange={(event) => setShowInactive(event.target.checked)} />
-                <label htmlFor="ShowInactiveCheck">現在運用されていないアカウントも表示する</label>
+                <label>
+                    <input type="checkbox" onChange={(event) => setShowInactive(event.target.checked)} className="mr-2" />
+                    現在運用されていないアカウントも表示する
+                </label>
             </div>
             <div className="overflow-x-auto whitespace-nowrap pb-2">
                 <table className="account-list border-t border-b border-neutral-500">
