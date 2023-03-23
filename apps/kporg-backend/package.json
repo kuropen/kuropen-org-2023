@@ -17,5 +17,9 @@
     "dev": "wrangler dev",
     "deploy": "wrangler publish"
   },
-  "license": "MPL-2.0"
+  "license": "MPL-2.0",
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "gray-matter": "^4.0.3"
+  }
 }

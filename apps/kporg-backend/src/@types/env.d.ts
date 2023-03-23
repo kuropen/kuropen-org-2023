@@ -10,6 +10,7 @@ interface Env {
 	PS_PASSWORD?: string
 	PGN_API_HOST?: string
 	FB_URL?: string
+	BLOG_BUCKET?: R2Bucket
 }
 
 export default Env

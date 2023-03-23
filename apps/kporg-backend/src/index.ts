@@ -6,6 +6,7 @@
 
 import { WhatsNewListSelectOptions } from "@kuropen/kporg-types";
 import Env from "./@types/env"
+import getPgnArchiveDoc from "./services/pgnArchiveDocService";
 import getWhatsNewList from "./services/whatsNewListService";
 import runAggregateTask from "./tasks"
 
@@ -45,6 +46,15 @@ export default {
 
 		if (pathname === '/manual-execute') {
 			const result = await runAggregateTask(env)
+			return new Response(JSON.stringify(result), {
+				headers: {
+					'Content-Type': 'application/json',
+				}
+			})
+		}
+
+		if (pathname === '/api/posts') {
+			const result = await getPgnArchiveDoc(env, url.searchParams)
 			return new Response(JSON.stringify(result), {
 				headers: {
 					'Content-Type': 'application/json',

@@ -5,14 +5,14 @@
  */
 
 import { WhatsNewContent } from "@kuropen/kporg-types"
-import { read } from '@extractus/feed-extractor'
+import { extract } from '@extractus/feed-extractor'
 import { CrawlTask } from "../@types"
 
 const NOTE_RSS_URL = 'https://note.com/penguinote/rss' as const
 
 class NoteTask implements CrawlTask {
     async crawl(): Promise<WhatsNewContent[]> {
-        const rssContent = await read(NOTE_RSS_URL)
+        const rssContent = await extract(NOTE_RSS_URL)
         const contentsFromNote = rssContent.entries?.map((content) => {
             const entry: WhatsNewContent = {
                 source: 'Note',

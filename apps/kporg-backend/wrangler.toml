@@ -1,9 +1,12 @@
 name = "kporg-backend"
 main = "src/index.ts"
 compatibility_date = "2023-01-09"
+account_id = "11b5327dbbe63a3113e9cc87c43a0ffd"
 
-[vars]
-PGN_API_HOST = "https://cms2.kuropen.org"
+[[r2_buckets]]
+binding = 'BLOG_BUCKET'
+bucket_name = 'kuropen-blog-texts'
+preview_bucket_name = 'kuropen-blog-texts'
 
 [triggers]
 crons = [ "0 17 * * *" ]

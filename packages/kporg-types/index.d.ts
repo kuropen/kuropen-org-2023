@@ -117,6 +117,7 @@ export {
     WhatsNewContentOnDatabase,
     FetchApiParams,
     FilterConditions,
+    SingleFilterCondition,
     StrapiData,
     PaginationParams,
     StrapiResult,

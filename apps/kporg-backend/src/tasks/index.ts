@@ -9,7 +9,7 @@ import Env from "../@types/env"
 import { CrawlTask } from "../@types"
 import generateQueryParam from "../util/generateQueryParam"
 import NoteTask from "./noteTask"
-import PenguinoneCmsTask from "./penguinoneCmsTask"
+import PenguinoneBlogTask from "./penguinoneBlogTask"
 import { WhatsNewContent } from "@kuropen/kporg-types"
 
 /**
@@ -20,11 +20,8 @@ import { WhatsNewContent } from "@kuropen/kporg-types"
 async function runAggregateTask(env: Env): Promise<ExecutedQuery[] | WhatsNewContent[]> {
 	const tasks: CrawlTask[] = [
 		new NoteTask(),
+		new PenguinoneBlogTask(env.BLOG_BUCKET),
 	]
-
-	if (env.PGN_API_HOST) {
-		tasks.push(new PenguinoneCmsTask(env.PGN_API_HOST))
-	}
 
 	const promises = tasks.map((task) => task.crawl())
 	const feeds = await Promise.all(promises)
