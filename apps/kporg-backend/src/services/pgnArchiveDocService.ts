@@ -12,7 +12,6 @@ import { Buffer } from "buffer"
 async function getPgnArchiveDoc(env: Env, query: URLSearchParams) {
     // see the definition of FilterCondition
     const slug = query.get('filters[slug][$eq]')
-    console.log(slug)
     let postData: StrapiData | undefined
 
     // @ts-ignore
