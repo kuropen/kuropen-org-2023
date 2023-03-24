@@ -32,5 +32,8 @@
     "remark-rehype": "^10.1.0",
     "unified": "^10.1.2"
   },
-  "license": "MPL-2.0"
+  "license": "MPL-2.0",
+  "engines": {
+    "node": "18.x"
+  }
 }
