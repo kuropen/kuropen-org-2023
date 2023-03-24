@@ -3,8 +3,8 @@ name: Deploy backend (production)
 on:
   push:
     branches: [ "main" ]
-  # pull_request:
-  #   branches: [ "main" ]
+    paths-ignore:
+      - "apps/kporg-frontend/**"
 
 jobs:
   build:
