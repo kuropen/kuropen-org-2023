@@ -18,32 +18,3 @@ Copyright (C) 2023 Kuropen (Hirochika Yuda).
 ### Misskeyのロゴマーク
 [Misskeyのロゴマーク](https://misskey-hub.net/appendix/assets.html)はsyuilo氏をはじめとするMisskeyコントリビューターが著作権を有し、
 [クリエイティブ・コモンズ 表示-非営利-継承 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)の条件で利用できます。
-
-### Heroicons
-入手先: https://heroicons.com/
-
-MIT License
-
-Copyright (c) 2020 Refactoring UI Inc.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-### その他のコンポーネント
-
-[その他の当サイトで利用しているコンポーネントの著作権表示](/licenses.txt)
