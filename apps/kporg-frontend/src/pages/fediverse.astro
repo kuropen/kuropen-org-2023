@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/SubLayout.astro'
 import MisskeyIcon from '../assets/misskey.png'
 import FediverseAccountList from '../components/FediverseAccountList'
 import { InformationCircleIcon } from '@heroicons/react/24/outline'
@@ -19,7 +19,7 @@ import { InformationCircleIcon } from '@heroicons/react/24/outline'
                 これらのアカウントは、対応するSNS (Mastodon, Misskey) のいずれかのサーバーにアカウントを持っていればリモートフォローが可能です。<br />
                 リモートフォローするには、お使いのSNSの検索ウィンドウにアカウント名を入力してください。</p>
         </div>
-        <FediverseAccountList client:visible />
+        <FediverseAccountList showDetails={true} client:visible />
     </section>
     <div class="flex justify-start gap-2">
         <a href="/" class="flex flex-row items-center gap-2 rounded-lg shadow-lg p-4 hover:bg-indigo-200">
