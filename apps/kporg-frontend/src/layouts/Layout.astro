@@ -1,9 +1,8 @@
 ---
 import FediverseAccounts from '../utils/FediverseAccounts'
+import type LayoutProps from '../layoutProps'
 
-export interface Props {
-	title?: string;
-}
+export interface Props extends LayoutProps {}
 
 const { title } = Astro.props
 
@@ -22,12 +21,7 @@ const activeFediverseAccounts = FediverseAccounts.getAccounts({isActive: true})
 	</head>
 	<body>
 		<div class="container mx-auto">
-			<header class="flex flex-row p-4 mb-4 rounded-b-lg shadow-lg items-center bg-blue-300 border-b border-l border-r">
-				<h1 class="text-2xl orbitron"><a href="/" class="hover:underline">Kuropen.org</a></h1>
-			</header>
-			<main>
-				<slot />
-			</main>
+			<slot />
 			<footer class="p-4 mt-4 text-center">
 				<p class="text-sm">
 					Copyright &copy; 2018-2023 Kuropen. <br />

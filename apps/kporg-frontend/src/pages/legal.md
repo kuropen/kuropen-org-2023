@@ -18,3 +18,6 @@ Copyright (C) 2023 Kuropen (Hirochika Yuda).
 ### Misskeyのロゴマーク
 [Misskeyのロゴマーク](https://misskey-hub.net/appendix/assets.html)はsyuilo氏をはじめとするMisskeyコントリビューターが著作権を有し、
 [クリエイティブ・コモンズ 表示-非営利-継承 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)の条件で利用できます。
+
+### 当サイトのキービジュアル
+トップページに表示される当サイトのキービジュアルは、[Bing AI](https://www.bing.com/images/create)によって生成されたものです。
