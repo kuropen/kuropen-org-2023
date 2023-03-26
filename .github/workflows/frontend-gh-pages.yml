@@ -25,6 +25,7 @@ jobs:
         with:
           path: apps/kporg-frontend
           node-version: 18
+          resolve-dep-from-path: false
         env:
           PGN_CMS_HOST: https://site-api.kuropen.org
           PUBLIC_BACKEND_HOST: https://site-api.kuropen.org
