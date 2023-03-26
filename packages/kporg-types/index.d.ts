@@ -14,7 +14,7 @@ interface WhatsNewContent {
     url: string
 }
 
-type WhatsNewContentOnDatabase = Omit<WhatsNewContent, "is_external"> | {
+type WhatsNewContentOnDatabase = Omit<WhatsNewContent, "is_external"> & {
     is_external: 0 | 1
 }
 
