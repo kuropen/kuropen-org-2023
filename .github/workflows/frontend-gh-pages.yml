@@ -20,13 +20,12 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
-      - name: Creating symbolic link of Lockfile
-        run: 'ln -s yarn.lock apps/kporg-frontend/yarn.lock'
       - name: Install, build, and upload your site
         uses: withastro/action@v0
         with:
           path: apps/kporg-frontend
           node-version: 18
+          package-manager: yarn
         env:
           PGN_CMS_HOST: https://site-api.kuropen.org
           PUBLIC_BACKEND_HOST: https://site-api.kuropen.org
