@@ -5,7 +5,7 @@
  */
 
 import * as qs from "qs"
-import type { WhatsNewContent, WhatsNewListSelectOptions } from "@kuropen/kporg-types"
+import type { WhatsNewContent, WhatsNewListSelectOptions } from "../../../../packages/kporg-types"
 
 /**
  * Fetching article list from "What's New" backend API

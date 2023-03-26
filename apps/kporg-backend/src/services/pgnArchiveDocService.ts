@@ -5,7 +5,7 @@
  */
 
 import Env from "../@types/env"
-import { StrapiData, StrapiResult } from "@kuropen/kporg-types"
+import { StrapiData, StrapiResult } from "../../../../packages/kporg-types"
 import matter from 'gray-matter'
 import { Buffer } from "buffer"
 

@@ -4,7 +4,7 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-import { WhatsNewContent, WhatsNewContentOnDatabase } from "@kuropen/kporg-types"
+import { WhatsNewContent, WhatsNewContentOnDatabase } from "../../../../packages/kporg-types"
 import { format } from "date-fns"
 
 function generateQueryParam(content: WhatsNewContent): WhatsNewContentOnDatabase {

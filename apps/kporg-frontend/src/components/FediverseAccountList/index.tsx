@@ -55,7 +55,7 @@ export default function ({showDetails}: AccountListProps) {
                             dlClasses.push('text-gray-500')
                         }
                         return (
-                            <dl className={dlClasses.join(' ')}>
+                            <dl className={dlClasses.join(' ')} key={accountId}>
                                 <dt>{getSystemIcon(serverSystem)}</dt>
                                 <dd>
                                     <ul>

@@ -5,7 +5,7 @@
  */
 
 import { connect, Config } from "@planetscale/database/dist"
-import { WhatsNewContent, WhatsNewListSelectOptions } from "@kuropen/kporg-types"
+import { WhatsNewContent, WhatsNewListSelectOptions } from "../../../../packages/kporg-types"
 import Env from "../@types/env"
 
 type WhatsNewListSelectParam = {

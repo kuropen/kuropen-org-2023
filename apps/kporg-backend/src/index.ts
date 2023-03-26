@@ -4,7 +4,7 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-import { WhatsNewListSelectOptions } from "@kuropen/kporg-types";
+import { WhatsNewListSelectOptions } from "../../../packages/kporg-types";
 import Env from "./@types/env"
 import getPgnArchiveDoc from "./services/pgnArchiveDocService";
 import getWhatsNewList from "./services/whatsNewListService";

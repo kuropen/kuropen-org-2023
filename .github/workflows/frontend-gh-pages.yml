@@ -25,7 +25,7 @@ jobs:
         with:
           path: apps/kporg-frontend
           node-version: 18
-          package-manager: yarn
+          package-manager: pnpm
         env:
           PGN_CMS_HOST: https://site-api.kuropen.org
           PUBLIC_BACKEND_HOST: https://site-api.kuropen.org
