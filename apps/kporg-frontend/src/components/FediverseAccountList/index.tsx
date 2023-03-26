@@ -74,35 +74,6 @@ export default function ({showDetails}: AccountListProps) {
                     })
                 }
             </div>
-            {/* <div className="overflow-x-auto whitespace-nowrap pb-2">
-                <table className="account-list border-t border-b border-neutral-500">
-                    <tr className="border-b-2 border-neutral-500">
-                        <th>サーバー名</th>
-                        <th>アカウント名</th>
-                        <th>備考</th>
-                    </tr>
-                    {
-                        FediverseAccounts
-                        .getAccounts({isActive: !isInactiveShown})
-                        .map(({serverName, serverSystem, accountId, isActive, link, remarks, linkTo}) => {
-                            return (
-                                <tr className={isActive ? '' : 'text-gray-500'} key={accountId}>
-                                    <td>{serverName} ({serverSystem})</td>
-                                    <td>
-                                        <div className="flex flex-row gap-1">
-                                            <p>
-                                                {link ? <a href={linkTo} target="_blank" className="underline">{accountId}</a> : accountId}
-                                            </p>
-                                            { isActive ? <ClipboardButton text={accountId} /> : <React.Fragment /> }
-                                        </div>
-                                    </td>
-                                    <td>{remarks}</td>
-                                </tr>
-                            )
-                        })
-                    }
-                </table>
-            </div> */}
         </div>
     )
 }
