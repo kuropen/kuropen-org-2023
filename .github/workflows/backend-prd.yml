@@ -23,6 +23,6 @@ jobs:
     - name: Intalling dependencies
       run: pnpm install
     - name: Deploy to Cloudflare Workers
-      run: cd apps/kporg-backend && pnpm deploy
+      run: cd apps/kporg-backend && pnpm run deploy
       env:
         CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
