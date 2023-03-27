@@ -3,8 +3,13 @@ import Layout from '../layouts/SubLayout.astro'
 import MisskeyIcon from '../assets/misskey.png'
 import FediverseAccountList from '../components/FediverseAccountList'
 import { InformationCircleIcon } from '@heroicons/react/24/outline'
+import type { OgpDataAsParameter } from '../ogpDataProps'
+
+const ogpData: OgpDataAsParameter = {
+    type: 'website',
+}
 ---
-<Layout title="Fediverseアカウント">
+<Layout title="Fediverseアカウント" og={ogpData}>
     <section class="mx-auto m-2 p-4 border rounded-lg shadow-lg">
         <div class="flex flex-row items-center mb-4 gap-2">
             <div class="mastodon w-8 fill-current">

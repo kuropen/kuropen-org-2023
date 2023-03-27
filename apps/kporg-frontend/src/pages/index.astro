@@ -4,9 +4,14 @@ import Profile from '../components/Profile.astro'
 import KeyVisual from '../assets/keyvisual.jpg'
 import FediverseAccountList from '../components/FediverseAccountList'
 import LinkWithArrow from '../components/LinkWithArrow.astro'
----
+import type { OgpDataAsParameter } from '../ogpDataProps'
 
-<Layout>
+const ogpData: OgpDataAsParameter = {
+    type: 'website',
+    image: new URL(KeyVisual, Astro.url).toString(),
+}
+---
+<Layout og={ogpData}>
 	<main class="border shadow-lg rounded-lg flex flex-col md:flex-row w-fit mx-auto">
 		<div class="relative w-full h-96 md:w-96 md:h-auto keyvisual rounded-lg" style={`background-image: url(${KeyVisual})`}>
 			<h1 class="absolute top-1 left-1 text-2xl orbitron text-white text-shadow">Kuropen.org</h1>

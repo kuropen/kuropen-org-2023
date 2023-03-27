@@ -5,10 +5,14 @@ import ArticleList from '../../components/ArticleList.astro'
 import ArchivesHeading from '../../components/ArchivesHeading.astro'
 
 import { ChevronLeftIcon } from '@heroicons/react/24/outline'
+import type { OgpDataAsParameter } from '../../ogpDataProps'
 
-const articlesList = await getWhatsNew();
+const articlesList = await getWhatsNew()
+const ogpData: OgpDataAsParameter = {
+    type: 'website',
+}
 ---
-<Layout title="書いたもの">
+<Layout title="書いたもの" og={ogpData}>
     <section class="mx-auto m-2 p-4 border rounded-lg shadow-lg">
 		<ArchivesHeading />
         <ul class="flex flex-col gap-2">

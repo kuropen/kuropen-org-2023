@@ -9,6 +9,7 @@ import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import { ChevronLeftIcon, ChevronDoubleLeftIcon } from '@heroicons/react/24/outline'
+import type { OgpDataAsParameter } from '../../ogpDataProps'
 
 interface PgnArchivesStaticPath {
     params: {
@@ -36,8 +37,13 @@ const content = contentArray[0]
 const articleDate = new Date(content.attributes.date)
 
 const mdContent = await unified().use(remarkParse).use(remarkGfm).use(remarkRehype).use(rehypeStringify).process(content.attributes.body)
+
+const ogpData: OgpDataAsParameter = {
+    type: 'article',
+    image: `https://ogp.kuropen.org/ogp/${slug}`,
+}
 ---
-<Layout title={content.attributes.title}>
+<Layout title={content.attributes.title} og={ogpData}>
     <section class="max-w-prose mx-auto">
         <div class="p-4 border rounded-lg shadow-lg mb-2">
             <div class="pb-4 mb-4 border-b-2">

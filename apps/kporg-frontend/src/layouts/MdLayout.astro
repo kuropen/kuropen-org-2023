@@ -7,10 +7,15 @@ export interface Props {
 
 import BaseLayout from "./SubLayout.astro"
 import { ChevronDoubleLeftIcon } from "@heroicons/react/24/outline"
+import type { OgpDataAsParameter } from "../ogpDataProps"
 
 const {frontmatter} = Astro.props
+
+const ogpData: OgpDataAsParameter = {
+    type: 'article',
+}
 ---
-<BaseLayout title={frontmatter.title}>
+<BaseLayout title={frontmatter.title} og={ogpData}>
     <div class="mx-auto w-fit m-2 p-4 border rounded-lg shadow-lg">
         <div class="prose">
             <slot />

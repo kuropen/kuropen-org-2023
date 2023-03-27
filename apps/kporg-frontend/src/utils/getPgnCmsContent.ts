@@ -4,7 +4,7 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-import type { FetchApiParams, FilterConditions, StrapiResult } from "@kuropen/kporg-types"
+import type { FetchApiParams, FilterConditions, StrapiResult } from "../../../../packages/kporg-types"
 import * as qs from "qs"
 
 /**

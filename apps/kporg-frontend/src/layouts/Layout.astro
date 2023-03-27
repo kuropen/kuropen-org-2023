@@ -1,23 +1,34 @@
 ---
 import FediverseAccounts from '../utils/FediverseAccounts'
 import type LayoutProps from '../layoutProps'
+import generateOgpMeta from '../utils/generateOgpMeta'
 
 export interface Props extends LayoutProps {}
 
-const { title } = Astro.props
+const siteName = 'Kuropen.org' as const
+
+const { title, og } = Astro.props
 
 const activeFediverseAccounts = FediverseAccounts.getAccounts({isActive: true})
+
+const ogpMeta = og ? generateOgpMeta({
+	...og,
+	title: og.title || title || siteName,
+	siteName: siteName,
+	url: og.url || Astro.url.toString(),
+}) : undefined
 ---
 
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
+	<head prefix="og:http://ogp.me/ns#">
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title ? `${title} - ` : ''}Kuropen.org</title>
+		<title>{title ? `${title} - ${siteName}` : siteName}</title>
 		{activeFediverseAccounts.map(({linkTo}) => (<link rel="me" href={linkTo} />))}
+		{ogpMeta?.map(({property, content}) => (<meta property={property} content={content} />))}
 	</head>
 	<body>
 		<div class="container mx-auto">
