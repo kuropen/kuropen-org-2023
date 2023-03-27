@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kuropen.org/sitemap-index.xml

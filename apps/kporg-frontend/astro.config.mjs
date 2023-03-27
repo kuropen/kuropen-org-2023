@@ -7,7 +7,10 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
 // https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://kuropen.org',
-  integrations: [tailwind(), react()]
+  integrations: [tailwind(), react(), sitemap()]
 });
