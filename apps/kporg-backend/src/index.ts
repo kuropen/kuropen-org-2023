@@ -28,6 +28,7 @@ export default {
 			return new Response(result, {
 				headers: {
 					'Content-Type': 'application/json',
+					'Access-Control-Allow-Origin': '*',
 				}
 			})
 		}
