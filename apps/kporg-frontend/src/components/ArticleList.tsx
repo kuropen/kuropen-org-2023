@@ -1,3 +1,9 @@
+/*!
+ * Copyright (C) 2023 Kuropen.
+ * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. 
+ * If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
 import useSWR from 'swr'
 
 import type { WhatsNewContent } from '../../../../packages/kporg-types'
@@ -15,22 +21,22 @@ interface ArticleListProps {
 export default function ArticleList ({articles}: ArticleListProps) {
     const { data, error, isLoading } = useSWR('/whatsnew', getWhatsNew)
 
-    let articlesList: WhatsNewContent[] | undefined
+    let articlesList = articles
 
-    if (error) {
-        return (<div>記事一覧を読み込めませんでした。</div>)
-    } else if (isLoading) {
-        if (articles) {
-            articlesList = articles
-        } else {
-            return (<div>記事一覧を読み込み中です。</div>)
-        }
-    } else {
+    if (!error && !isLoading && data) {
+        console.info('Article list updated by the client.')
         articlesList = data
     }
 
     if (!articlesList) {
-        return (<div>表示できる記事がありません。</div>)
+        let message = '表示できる記事がありません。'
+        if (error) {
+            message = '記事一覧を読み込めませんでした。'
+        } else if (isLoading) {
+            message = '記事一覧を読み込み中です。';
+        }
+        console.warn(`Client-side article list update status: ${message}`)
+        return (<div>{message}</div>)
     }
 
     return (
