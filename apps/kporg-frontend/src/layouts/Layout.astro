@@ -26,10 +26,13 @@ const ogpMeta = og ? generateOgpMeta({
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
+		{/* Outputs link tag for canonical URL */}
+		<link rel="canonical" href={Astro.url} />
+		{/* Outputs meta tags for Open Graph */}
+		{ogpMeta?.map(({property, content}) => (<meta property={property} content={content} />))}
 		<meta name="generator" content={Astro.generator} />
 		<title>{title ? `${title} - ${siteName}` : siteName}</title>
 		{activeFediverseAccounts.map(({linkTo}) => (<link rel="me" href={linkTo} />))}
-		{ogpMeta?.map(({property, content}) => (<meta property={property} content={content} />))}
 	</head>
 	<body>
 		<div class="container mx-auto">
