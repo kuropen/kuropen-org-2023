@@ -14,9 +14,11 @@ interface WhatsNewContent {
     url: string
 }
 
+type WhatsNewContentWithHash = WhatsNewContent & { hash: string }
+
 type WhatsNewContentOnDatabase = Omit<WhatsNewContent, "is_external"> & {
     is_external: 0 | 1
-}
+} & Partial<Pick<WhatsNewContentWithHash, "hash">>
 
 type PenguinonePostAttribute = {
     title: string
@@ -122,4 +124,5 @@ export {
     PaginationParams,
     StrapiResult,
     WhatsNewListSelectOptions,
+    WhatsNewContentWithHash,
 }

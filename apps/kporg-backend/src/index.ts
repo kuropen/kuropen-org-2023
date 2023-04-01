@@ -10,6 +10,13 @@ import getPgnArchiveDoc from "./services/pgnArchiveDocService";
 import getWhatsNewList from "./services/whatsNewListService";
 import runAggregateTask from "./tasks"
 
+const doTasks = async (env: Env) => {
+	const tasks: Promise<any>[] = [
+		runAggregateTask(env),
+	]
+	return await Promise.all(tasks)
+}
+
 export default {
 	async fetch(request: Request, env: Env): Promise<Response> {
 		const url = new URL(request.url)
@@ -46,7 +53,7 @@ export default {
 		}
 
 		if (pathname === '/manual-execute') {
-			const result = await runAggregateTask(env)
+			const result = await doTasks(env)
 			return new Response(JSON.stringify(result), {
 				headers: {
 					'Content-Type': 'application/json',
@@ -74,6 +81,6 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	): Promise<void> {
-		await runAggregateTask(env)
+		await doTasks(env)
 	},
 };

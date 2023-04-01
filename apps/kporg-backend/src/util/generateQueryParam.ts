@@ -17,7 +17,7 @@ function generateQueryParam(content: WhatsNewContent): WhatsNewContentOnDatabase
     const param: WhatsNewContentOnDatabase = {
         ...content,
         date: dateString,
-        is_external: (content.is_external ? 1 : 0)
+        is_external: (content.is_external ? 1 : 0),
     }
     return param
 }
