@@ -7,12 +7,6 @@
 import { WhatsNewContent, WhatsNewContentOnDatabase, WhatsNewListSelectOptions } from "../../../../packages/kporg-types"
 import Env from "../@types/env"
 
-type WhatsNewListSelectParam = {
-    limit?: number
-    offset?: number
-    source?: string
-}
-
 /**
  * Fetches "What's New" table and returns its content in JSON string.
  * @param env Environment variables

@@ -9,7 +9,6 @@ importers:
     specifiers:
       '@cloudflare/workers-types': ^4.20221111.1
       '@extractus/feed-extractor': ^6.2.0
-      '@planetscale/database': ^1.5.0
       '@types/qs': ^6.9.7
       buffer: ^6.0.3
       date-fns: ^2.29.3
@@ -25,7 +24,6 @@ importers:
     devDependencies:
       '@cloudflare/workers-types': 4.20230221.0
       '@extractus/feed-extractor': 6.2.1
-      '@planetscale/database': 1.5.0
       '@types/qs': 6.9.7
       date-fns: 2.29.3
       qs: 6.11.0
@@ -984,11 +982,6 @@ packages:
       tiny-glob: 0.2.9
       tslib: 2.5.0
     dev: false
-
-  /@planetscale/database/1.5.0:
-    resolution: {integrity: sha512-Qwh7Or1W5dB5mZ9EQqDkgvkDKhBBmQe58KIVUy0SGocNtr5fP4JAWtvZ6EdLAV6C6hVpzNlCA2xIg9lKTswm1Q==}
-    engines: {node: '>=16'}
-    dev: true
 
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}

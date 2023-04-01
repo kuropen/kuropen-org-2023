@@ -4,7 +4,6 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-import { connect, ExecutedQuery, Config } from "@planetscale/database/dist"
 import Env from "../@types/env"
 import { CrawlTask } from "../@types"
 import generateQueryParam from "../util/generateQueryParam"
@@ -18,7 +17,7 @@ import Jssha from "jssha"
  * @param env Environment variables
  * @returns result (for debug purpose; normally discarded)
  */
-async function runAggregateTask(env: Env): Promise<(ExecutedQuery | D1Result | WhatsNewContent | undefined)[]> {
+async function runAggregateTask(env: Env): Promise<(D1Result | WhatsNewContent | undefined)[]> {
 	const tasks: CrawlTask[] = [
 		new NoteTask(),
 		new PenguinoneBlogTask(env.BLOG_BUCKET),
