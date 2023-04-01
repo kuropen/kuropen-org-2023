@@ -11,6 +11,7 @@ interface Env {
 	PGN_API_HOST?: string
 	FB_URL?: string
 	BLOG_BUCKET?: R2Bucket
+	DB?: D1Database
 }
 
 export default Env

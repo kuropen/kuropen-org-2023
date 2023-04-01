@@ -4,8 +4,7 @@
  * If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-import { connect, Config } from "@planetscale/database/dist"
-import { WhatsNewContent, WhatsNewListSelectOptions } from "../../../../packages/kporg-types"
+import { WhatsNewContent, WhatsNewContentOnDatabase, WhatsNewListSelectOptions } from "../../../../packages/kporg-types"
 import Env from "../@types/env"
 
 type WhatsNewListSelectParam = {
@@ -20,39 +19,24 @@ type WhatsNewListSelectParam = {
  * @returns JSON string
  */
 async function getWhatsNewList(env: Env, options: WhatsNewListSelectOptions): Promise<string> {
-    const { limit, offset, source } = options
+    const { source } = options
 
-    if (env.PS_HOST && env.PS_USER && env.PS_PASSWORD) {
-        const psConfig: Config = {
-			host: env.PS_HOST,
-			username: env.PS_USER,
-			password: env.PS_PASSWORD,
-		}
-
-        const conn = connect(psConfig)
-
-        let params: WhatsNewListSelectParam = {}
-
+    if (env.DB) {
         const whereConditions = [
-            '`date` < NOW()'
+            "`date` < datetime('now')"
         ]
         if (source) {
-            whereConditions.push('`source` = :source')
-            params.source = source
+            whereConditions.push('source = ?')
         }
 
-        let query = 'SELECT `source`, `title`, `date`, `is_external`, `url` FROM `whatsnew` WHERE ' + whereConditions.join(' AND ') + ' ORDER BY `date` DESC'
-        if (limit) {
-            query += ' LIMIT :limit'
-            params.limit = limit
+        let query = 'SELECT source, title, date, is_external, url FROM whatsnew WHERE ' + whereConditions.join(' AND ') + ' ORDER BY date DESC;'
+
+        let stmt = env.DB?.prepare(query)
+        if (source) {
+            stmt = stmt?.bind(source)
         }
-        if (offset) {
-            query += ' OFFSET :offset'
-            params.offset = offset
-        }
-        query += ';'
-        const result = await conn.execute(query, params)
-        const contents = result.rows.map((row) => {
+        const { results } = await stmt.all<WhatsNewContentOnDatabase>();
+        const contents = results?.map((row) => {
             let content: WhatsNewContent | undefined
             if (!Array.isArray(row)) {
                 content = {

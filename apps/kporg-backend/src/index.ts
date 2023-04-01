@@ -23,12 +23,8 @@ export default {
 		const { pathname } = url
 
 		if (pathname === '/whatsnew') {
-			const sLimit = url.searchParams.get('limit')
-			const sOffset = url.searchParams.get('offset')
 			const source = url.searchParams.get('source')
 			const options: WhatsNewListSelectOptions = {
-				limit: (typeof sLimit === "string") ? parseInt(sLimit) : sLimit,
-				offset: (typeof sOffset === "string") ? parseInt(sOffset) : sOffset,
 				source: (source === 'PGN-CMS' || source === 'Note') ? source : undefined,
 			}
 			const result = await getWhatsNewList(env, options)

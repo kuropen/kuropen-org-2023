@@ -27,7 +27,8 @@ class PenguinoneBlogTask implements CrawlTask {
 
         const tocObject = await this.bucket.get("toc.json")
         if (tocObject === null) {
-            throw new Error("toc.json Not Found.")
+            console.error("toc.json not found.")
+            return []
         }
 
         const toc: Toc = await tocObject.json()

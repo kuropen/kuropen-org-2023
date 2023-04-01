@@ -109,8 +109,6 @@ type FetchApiParams = {
 }
 
 type WhatsNewListSelectOptions = {
-    limit?: number | null
-    offset?: number | null
     source?: Source
 }
 
