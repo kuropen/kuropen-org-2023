@@ -12,6 +12,7 @@ interface Env {
 	FB_URL?: string
 	BLOG_BUCKET?: R2Bucket
 	DB?: D1Database
+	REFRESH_WEBHOOK_URL?: string
 }
 
 export default Env

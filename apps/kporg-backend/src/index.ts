@@ -10,11 +10,65 @@ import getPgnArchiveDoc from "./services/pgnArchiveDocService";
 import getWhatsNewList from "./services/whatsNewListService";
 import runAggregateTask from "./tasks"
 
+/**
+ * Content update related tasks.
+ * @param env Environment variable
+ * @returns Results of fetching tasks
+ */
 const doTasks = async (env: Env) => {
+	// Running fetching tasks.
 	const tasks: Promise<any>[] = [
 		runAggregateTask(env),
 	]
-	return await Promise.all(tasks)
+	const fetchResult = await Promise.all(tasks)
+
+	// Now "fetchResult" is an array may be nested.
+	// Count the number of all contents.
+	let count = 0
+	for (const result of fetchResult) {
+		if (typeof result === 'number') {
+			count += result
+		} else if (typeof result === 'object') {
+			for (const subResult of result) {
+				if (typeof subResult === 'number') {
+					count += subResult
+				}
+			}
+		}
+	}
+
+	let updateResult: any = []
+
+	// Once after fetching tasks are done, we will trigger a webhook
+	// if such webhook is defined in environment variable "REFRESH_WEBHOOK_URL".
+	// But if the count of fetchResult is zero, the webhook should be skipped.
+	if (env.REFRESH_WEBHOOK_URL && count > 0) {
+		const response = await fetch(env.REFRESH_WEBHOOK_URL, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				message: 'Content update is done.',
+			}),
+		})
+		if (!response.ok) {
+			// In this case, error message is included in update result.
+			const message = 'Failed to trigger a webhook.'
+			console.error(message, response)
+			updateResult = message
+		} else {
+			// include the webhook response in update result.
+			updateResult = await response.json()
+		}
+	}
+
+	return {
+		result: {
+			fetch: fetchResult,
+			update: updateResult,
+		}
+	}
 }
 
 export default {
