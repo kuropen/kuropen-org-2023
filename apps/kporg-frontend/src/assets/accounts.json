@@ -4,7 +4,8 @@
         "serverSystem": "Misskey",
         "accountId": "@kuropen@mi.kuropen.org",
         "isActive": true,
-        "link": true
+        "link": true,
+        "featured": true
     },
     {
         "serverName": "Fedibird",
@@ -12,7 +13,8 @@
         "accountId": "@kuropen@fedibird.com",
         "isActive": true,
         "link": true,
-        "remarks": "現在サブアカウント"
+        "remarks": "現在サブアカウント",
+        "featured": false
     },
     {
         "serverName": "銀河丼",
@@ -20,7 +22,8 @@
         "accountId": "@kuropen@gingadon.com",
         "isActive": false,
         "link": true,
-        "remarks": "Fedibirdに引っ越し"
+        "remarks": "Fedibirdに引っ越し",
+        "featured": false
     },
     {
         "serverName": "まちトドン",
@@ -28,7 +31,8 @@
         "accountId": "@kuropen@matitodon.com",
         "isActive": false,
         "link": true,
-        "remarks": "Fedibirdに引っ越し"
+        "remarks": "Fedibirdに引っ越し",
+        "featured": false
     },
     {
         "serverName": "mstdn.jp",
@@ -36,7 +40,8 @@
         "accountId": "@kuropen@mstdn.jp",
         "isActive": false,
         "link": true,
-        "remarks": "Fedibirdに引っ越し"
+        "remarks": "Fedibirdに引っ越し",
+        "featured": false
     },
     {
         "serverName": "Penguinone Annex",
@@ -44,7 +49,8 @@
         "accountId": "@krpn@kuropen.me",
         "isActive": false,
         "link": false,
-        "remarks": "サーバー廃止によりアカウント消滅"
+        "remarks": "サーバー廃止によりアカウント消滅",
+        "featured": false
     },
     {
         "serverName": "misskey.io",
@@ -52,7 +58,8 @@
         "accountId": "@kuropen@misskey.io",
         "isActive": false,
         "link": false,
-        "remarks": "システム障害によりアカウント消滅"
+        "remarks": "システム障害によりアカウント消滅",
+        "featured": false
     },
     {
         "serverName": "becodon",
@@ -60,6 +67,7 @@
         "accountId": "@kuropen@don.akabe.co",
         "isActive": false,
         "link": false,
-        "remarks": "サーバー廃止によりアカウント消滅"
+        "remarks": "サーバー廃止によりアカウント消滅",
+        "featured": false
     }
 ]

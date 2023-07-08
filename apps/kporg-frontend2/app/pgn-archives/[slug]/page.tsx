@@ -35,7 +35,7 @@ export default async function PgnArchivesDetailPage({ params }: PgnArchivesDetai
                     </dl>
                 </aside>
                 <div className="border rounded-md p-2 dark:bg-gray-100">
-                    <div className="prose" dangerouslySetInnerHTML={{__html: mdContent}}></div>
+                    <div className="prose" dangerouslySetInnerHTML={{__html: mdContent.toString()}}></div>
                 </div>
             </div>
         </main>

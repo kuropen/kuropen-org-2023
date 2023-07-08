@@ -12,6 +12,7 @@ import './listStyle.css'
 
 interface AccountListProps {
     showDetails?: boolean
+    featuredOnly?: boolean
 }
 
 function getSystemIcon(serverSystem: string) {
@@ -32,7 +33,7 @@ function getSystemIcon(serverSystem: string) {
  * Fediverse Account List (React Component)
  * @returns React Component
  */
-export default function ({showDetails}: AccountListProps) {
+export default function ({showDetails, featuredOnly}: AccountListProps) {
     const [isInactiveShown, setShowInactive] = useState(false)
 
     return (
@@ -48,7 +49,7 @@ export default function ({showDetails}: AccountListProps) {
             <div>
                 {
                     FediverseAccounts
-                    .getAccounts({isActive: !isInactiveShown})
+                    .getAccounts({isActive: !isInactiveShown, isFeatured: featuredOnly})
                     .map(({serverName, serverSystem, accountId, isActive, link, remarks, linkTo}) => {
                         const dlClasses = ['my-2', 'flex', 'flex-row']
                         if (!isActive) {

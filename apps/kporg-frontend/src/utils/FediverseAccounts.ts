@@ -6,6 +6,7 @@ type FediverseAccount = typeof Accounts[0] & {
 
 interface FediverseAccountFilter {
     isActive?: boolean
+    isFeatured?: boolean
 }
 
 /**
@@ -13,7 +14,12 @@ interface FediverseAccountFilter {
  */
 export default class {
     static getAccounts(filter?: FediverseAccountFilter): FediverseAccount[] {
-        return Accounts.filter(({isActive}) => (filter?.isActive ? isActive : true)).map((account) => {
+        return Accounts.filter(({isActive, featured}) => {
+            if (filter?.isFeatured) {
+                return featured
+            }
+            return (filter?.isActive ? isActive : true)
+        }).map((account) => {
             const {accountId} = account
             const accountIdElements = (accountId.charAt(0) === '@' ? accountId.substring(1) : accountId).split('@')
             const linkTo = `https://${accountIdElements[1]}/@${accountIdElements[0]}`
