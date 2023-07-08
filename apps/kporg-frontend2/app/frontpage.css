@@ -1,0 +1,52 @@
+dl {
+    @apply flex flex-row items-center gap-2 my-2;
+}
+.speciality-list > ul > li {
+    @apply inline;
+}
+.speciality-list > ul > li:not(:last-child)::after {
+    content: ", ";
+}
+.btn, .social-btn {
+    @apply flex flex-row gap-2 border rounded-md p-4;
+}
+.btn {
+    @apply border-black dark:border-gray-100 ;
+}
+.btn:hover {
+    @apply bg-black dark:bg-gray-100 dark:text-black;
+}
+.social-btn {
+    @apply transition;
+    color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+.social-btn:hover {
+    background-color: var(--brand-color);
+    color: var(--hover-forecolor);
+}
+.facebook {
+    --brand-color: #1877F2;
+    --hover-forecolor: #ffffff;
+}
+.instagram {
+    --brand-color: #E4405F;
+    --hover-forecolor: #ffffff;
+}
+.misskey {
+    --brand-color: #A1CA03;
+    --hover-forecolor: #000000;
+}
+@media(prefers-color-scheme: light) {
+    /* 白背景の場合、Misskeyのブランドカラーの視認性が悪いため、文字色のみ変更する */
+    .misskey > span {
+        color: green;
+    }
+    .misskey:hover > span {
+        color: inherit;
+    }
+}
+.mastodon {
+    --brand-color: #6364FF;
+    --hover-forecolor: #ffffff;
+}
