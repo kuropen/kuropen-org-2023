@@ -4,6 +4,7 @@ import { Noto_Sans_JP, Orbitron } from 'next/font/google'
 import Image from 'next/image'
 import penguinImage from './penguin.png'
 import Link from 'next/link'
+import { Analytics } from '@vercel/analytics/react'
 
 const noto = Noto_Sans_JP({weight: ['400', '700'], subsets: ['latin']})
 const orbitron = Orbitron({weight: '700', subsets: ['latin']});
@@ -43,8 +44,14 @@ export default function RootLayout({
               Copyright &copy; 2018-2023 Kuropen. <br />
               Powered by <a href="https://nextjs.org/">Next.js</a>, <a href="https://tailwindcss.com/">Tailwind CSS</a>, <a href="https://heroicons.com/">Heroicons</a>, <a href="https://simpleicons.org/">Simple Icons</a>.
             </p>
+            <nav className="text-sm mt-1">
+              <ul className="grid grid-cols-2 w-fit mx-auto">
+                <li className="pl-2"><a href="/privacy" className="underline">Privacy Policy</a></li>
+              </ul>
+            </nav>
           </footer>
         </div>
+        <Analytics />
       </body>
     </html>
   )
