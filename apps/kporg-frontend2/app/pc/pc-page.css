@@ -1,0 +1,6 @@
+.speclist {
+    @apply grid grid-cols-3;
+}
+.speclist > dd {
+    @apply col-span-2;
+}

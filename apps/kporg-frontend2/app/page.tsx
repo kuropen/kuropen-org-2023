@@ -64,17 +64,22 @@ export default function Home() {
           </div>
         </FrontPageSection>
         <FrontPageSection title="Personal Projects">
-        <div className="flex flex-col gap-2">
-          <a href="https://mi.kuropen.org/" target="_blank" rel="noopener noreferrer" className="btn">
-            <span>MICROPEN Misskey Server</span>
-          </a>
-          <a href="https://akabe.co/" target="_blank" rel="noopener noreferrer" className="btn">
-            <span>Gain the Power from Akabeko</span>
-          </a>
-          <a href="https://status.kuropen.org/" target="_blank" rel="noopener noreferrer" className="btn">
-            <span>Service Status</span>
-          </a>
-        </div>
+          <div className="flex flex-col gap-2">
+            <a href="https://mi.kuropen.org/" target="_blank" rel="noopener noreferrer" className="btn">
+              <span>MICROPEN Misskey Server</span>
+            </a>
+            <a href="https://akabe.co/" target="_blank" rel="noopener noreferrer" className="btn">
+              <span>Gain the Power from Akabeko</span>
+            </a>
+            <a href="https://status.kuropen.org/" target="_blank" rel="noopener noreferrer" className="btn">
+              <span>Service Status</span>
+            </a>
+          </div>
+        </FrontPageSection>
+        <FrontPageSection title="Hobby">
+          <Link href="/pc" className="btn">
+              <span>DIY PC</span>
+          </Link>
         </FrontPageSection>
         <FrontPageSection title="Literature">
           <Link href="/pgn-archives" className="btn">

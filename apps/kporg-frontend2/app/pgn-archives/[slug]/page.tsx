@@ -8,10 +8,29 @@ import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import DateView from "../dateView"
+import { Metadata } from "next"
 
 type PgnArchivesDetailPageProps = {
     params: {
         slug: string
+    }
+}
+
+export async function generateMetadata({ params }: PgnArchivesDetailPageProps): Promise<Metadata> {
+    const contentArray = await getPgnCmsContent({slug: params.slug || ''})
+    if (!contentArray) {
+        throw "Page not found"
+    }
+    const content = contentArray[0]
+    return {
+        title: `${content.attributes.title} - Kuropen`,
+        openGraph: {
+            title: content.attributes.title,
+            type: 'article',
+            publishedTime: content.attributes.publishedAt,
+            modifiedTime: content.attributes.updatedAt,
+            url: `https://kuropen.org/pgn-archives/${content.attributes.slug}`,
+        }
     }
 }
 

@@ -3,6 +3,11 @@ import Link from "next/link"
 import FrontPageSection from "../frontPageSection"
 import { CalendarIcon, GlobeAltIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import DateView from "./dateView"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Literature - Kuropen',
+}
 
 export default async function PgnArchivesPage() {
     const contents = await getWhatsNew()

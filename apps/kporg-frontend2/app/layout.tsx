@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     title: 'Kuropen',
     description: 'Kuropen.org is personal site of Kuropen.',
   },
+  twitter: {
+    creator: '@kuropen_aizu',
+  },
 }
 
 export default function RootLayout({
