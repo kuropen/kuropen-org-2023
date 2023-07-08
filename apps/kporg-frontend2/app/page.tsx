@@ -81,6 +81,11 @@ export default function Home() {
             <span>List of articles (in Japanese)</span>
           </Link>
         </FrontPageSection>
+        <FrontPageSection title="Website Policy">
+          <Link href="/privacy" className="btn">
+            <span>Privacy Policy</span>
+          </Link>
+        </FrontPageSection>
       </div>
     </main>
   )

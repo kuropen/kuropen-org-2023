@@ -3,9 +3,8 @@ import Link from "next/link"
 export default function PrivacyPage() {
     return (
         <main>
-            <nav className="border rounded-md p-2 mb-4"><Link href="/">Home</Link> / Literature</nav>
+            <nav className="border rounded-md p-2 mb-4"><Link href="/">Home</Link> / Privacy Policy</nav>
             <div>
-                <h2 className="text-xl">Privacy Policy</h2>
                 <div className="border rounded-md p-2 dark:bg-gray-100">
                 <div className="prose">
                         <p>Scroll down for English.</p>

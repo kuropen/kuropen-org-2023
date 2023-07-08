@@ -44,11 +44,6 @@ export default function RootLayout({
               Copyright &copy; 2018-2023 Kuropen. <br />
               Powered by <a href="https://nextjs.org/">Next.js</a>, <a href="https://tailwindcss.com/">Tailwind CSS</a>, <a href="https://heroicons.com/">Heroicons</a>, <a href="https://simpleicons.org/">Simple Icons</a>.
             </p>
-            <nav className="text-sm mt-1">
-              <ul className="grid grid-cols-2 w-fit mx-auto">
-                <li className="pl-2"><a href="/privacy" className="underline">Privacy Policy</a></li>
-              </ul>
-            </nav>
           </footer>
         </div>
         <Analytics />
