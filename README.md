@@ -9,5 +9,4 @@ This repository is monorepo includes:
 ## Copyright notice
 Copyright (C) 2023 Kuropen (Hirochika Yuda).
 
-- These source codes are licensed under [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
-- The generated website itself and accompanying materials such as images are licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Please refer to [the legal notice on the website](https://kuropen.org/legal/) for the exceptions for commercial use.
+These source codes are licensed under [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/).

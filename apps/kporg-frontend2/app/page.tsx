@@ -1,7 +1,7 @@
 import React from 'react'
 import FrontPageSection from './frontPageSection'
 import { BriefcaseIcon, MapPinIcon, AcademicCapIcon, ArrowsRightLeftIcon, CommandLineIcon } from '@heroicons/react/24/outline'
-import { SiFacebook, SiInstagram, SiMisskey, SiMastodon } from '@icons-pack/react-simple-icons'
+import { SiFacebook, SiInstagram, SiMisskey, SiMastodon, SiTwitter } from '@icons-pack/react-simple-icons'
 import './frontpage.css'
 import Link from 'next/link'
 
@@ -52,15 +52,21 @@ export default function Home() {
               </a>
               <p className="mt-1 text-right text-xs text-gray-500">* Used when MICROPEN becomes unavailable</p>
             </div>
-            <a href="https://site-api.kuropen.org/fb" target="_blank" rel="noopener noreferrer" className="social-btn facebook">
-              <SiFacebook className="w-6 h-6" />
-              <span>Facebook</span>
-            </a>
             <a href="https://www.instagram.com/kuropen/" target="_blank" rel="noopener noreferrer" className="social-btn instagram">
               <SiInstagram className="w-6 h-6" />
               <span>Instagram &amp; Threads</span>
             </a>
-            <p className="text-xs text-gray-500">Twitter is no longer linked here because you must login to show user profile.</p>
+            <a href="https://site-api.kuropen.org/fb" target="_blank" rel="noopener noreferrer" className="social-btn facebook">
+              <SiFacebook className="w-6 h-6" />
+              <span>Facebook **</span>
+            </a>
+            <div>
+              <a href="https://twitter.com/kuropen_aizu" target="_blank" rel="noopener noreferrer" className="social-btn twitter">
+                <SiTwitter className="w-6 h-6" />
+                <span>Twitter **</span>
+              </a>
+              <p className="mt-1 text-right text-xs text-gray-500">** Login may be required</p>
+            </div>
           </div>
         </FrontPageSection>
         <FrontPageSection title="Personal Projects">
