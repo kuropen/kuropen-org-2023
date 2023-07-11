@@ -9,6 +9,7 @@ import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import DateView from "../dateView"
 import { Metadata } from "next"
+import { notFound } from "next/navigation"
 
 type PgnArchivesDetailPageProps = {
     params: {
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: PgnArchivesDetailPageProps): 
 export default async function PgnArchivesDetailPage({ params }: PgnArchivesDetailPageProps) {
     const contentArray = await getPgnCmsContent({slug: params.slug || ''})
     if (!contentArray) {
-        throw "Page not found"
+        notFound()
     }
     const content = contentArray[0]
     const mdContent = (await unified().use(remarkParse).use(remarkGfm).use(remarkRehype).use(rehypeStringify).process(content.attributes.body)).value
