@@ -20,7 +20,7 @@ type PgnArchivesDetailPageProps = {
 export async function generateMetadata({ params }: PgnArchivesDetailPageProps): Promise<Metadata> {
     const contentArray = await getPgnCmsContent({slug: params.slug || ''})
     if (!contentArray) {
-        throw "Page not found"
+        notFound()
     }
     const content = contentArray[0]
     return {
