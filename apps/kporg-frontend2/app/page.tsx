@@ -2,8 +2,11 @@ import React from 'react'
 import FrontPageSection from './frontPageSection'
 import { BriefcaseIcon, MapPinIcon, AcademicCapIcon, ArrowsRightLeftIcon, CommandLineIcon } from '@heroicons/react/24/outline'
 import { SiFacebook, SiInstagram, SiMisskey, SiMastodon, SiTwitter } from '@icons-pack/react-simple-icons'
+import { Noto_Sans_Math } from 'next/font/google'
 import './frontpage.css'
 import Link from 'next/link'
+
+const mathFont = Noto_Sans_Math({weight: '400', subsets: ['math']})
 
 export default function Home() {
   return (
@@ -62,7 +65,7 @@ export default function Home() {
             </a>
             <div>
               <a href="https://twitter.com/kuropen_aizu" target="_blank" rel="noopener noreferrer" className="social-btn twitter">
-                <SiTwitter className="w-6 h-6" />
+                <span className={['w-6', 'h-6', 'pb-1', 'text-3xl', mathFont.className].join(' ')}>&#120143;</span>
                 <span>Twitter **</span>
               </a>
               <p className="mt-1 text-right text-xs text-gray-500">** Login may be required</p>
