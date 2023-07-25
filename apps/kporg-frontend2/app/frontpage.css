@@ -1,3 +1,7 @@
+/*
+ * SPDX-FileCopyrightText: 2023 Kuropen <hy-kuropen@eternie-labs.net>
+ * SPDX-License-Identifier: CC0-1.0
+ */
 dl {
     @apply flex flex-row items-center gap-2 my-2;
 }

@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: 2023 Kuropen <hy-kuropen@eternie-labs.net>
+ * SPDX-License-Identifier: CC-BY-NC-SA-4.0
+ */
+
 import './globals.css'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP, Orbitron } from 'next/font/google'
@@ -44,7 +49,7 @@ export default function RootLayout({
           </div>
           <footer className="p-4 mt-4 text-center">
             <p className="text-sm">
-              Copyright &copy; 2018-2023 Kuropen. <br />
+              Copyright &copy; 2018-2023 Kuropen. Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">CC-BY-NC-SA-4.0</a>.<br />
               Powered by <a href="https://nextjs.org/">Next.js</a>, <a href="https://tailwindcss.com/">Tailwind CSS</a>, <a href="https://heroicons.com/">Heroicons</a>, <a href="https://simpleicons.org/">Simple Icons</a>.
             </p>
           </footer>

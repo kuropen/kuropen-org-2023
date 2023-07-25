@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: 2023 Kuropen <hy-kuropen@eternie-labs.net>
+ * SPDX-License-Identifier: CC-BY-NC-SA-4.0
+ */
+
 import React from 'react'
 import FrontPageSection from './frontPageSection'
 import { BriefcaseIcon, MapPinIcon, AcademicCapIcon, ArrowsRightLeftIcon, CommandLineIcon } from '@heroicons/react/24/outline'

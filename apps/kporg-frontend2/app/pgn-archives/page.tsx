@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: 2023 Kuropen <hy-kuropen@eternie-labs.net>
+ * SPDX-License-Identifier: CC-BY-NC-SA-4.0
+ */
+
 import getWhatsNew from "../../utils/getWhatsNew"
 import Link from "next/link"
 import FrontPageSection from "../frontPageSection"

@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: 2023 Kuropen <hy-kuropen@eternie-labs.net>
+ * SPDX-License-Identifier: CC-BY-NC-SA-4.0
+ */
+
 import Link from "next/link"
 import Image from 'next/image'
 import PcImage2022 from "./pc-20230624.jpg"
