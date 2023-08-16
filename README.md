@@ -14,5 +14,12 @@ This repository is monorepo includes:
 ## Copyright notice
 Copyright (C) 2023 Kuropen (Hirochika Yuda).
 
-These source codes are licensed under [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+These source codes are licensed under Business Source License 1.1, as described in `LICENSES/BUSL-1.1.txt`.
+
+When you use the source code in production environment, the source code of the derived work must be available for everyone accessible to your production environment via the network, and you **must not**:
+- clone the website generated with the source code
+- infringe the right of me
+
 Contents of the website and some source files which strongly tied with the contents are [CC-BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+The source codes licensed under BUSL will be re-licenced under [GNU Affero General Public License 3.0](https://www.gnu.org/licenses/agpl-3.0.html) or later, when 4 years elapsed after the publication.

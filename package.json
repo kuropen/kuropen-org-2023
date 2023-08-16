@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {},
-    "license": "MPL-2.0",
+    "license": "BUSL-1.1",
     "engines": {
       "node": "18.x"
     }

@@ -1,6 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2023 Kuropen <hy-kuropen@eternie-labs.net>
- * SPDX-License-Identifier: MPL-2.0
+ * SPDX-License-Identifier: BUSL-1.1
  */
 
 type Source = 'PGN-CMS' | 'Note'

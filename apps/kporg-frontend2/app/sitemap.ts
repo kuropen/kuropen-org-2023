@@ -1,6 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2023 Kuropen <hy-kuropen@eternie-labs.net>
- * SPDX-License-Identifier: CC0-1.0
+ * SPDX-License-Identifier: BUSL-1.1
  */
 
 import { MetadataRoute } from 'next'
