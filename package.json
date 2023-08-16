@@ -6,6 +6,6 @@
     "scripts": {},
     "license": "BUSL-1.1",
     "engines": {
-      "node": "18.x || 20.x"
+      "node": "18.x"
     }
 }
