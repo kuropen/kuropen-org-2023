@@ -19,7 +19,7 @@ export default function PrivacyPage() {
                 <div className="prose">
                         <p>Scroll down for English.</p>
                         <h2 id="プライバシーポリシー">プライバシーポリシー</h2>
-                        <p>2023年7月8日現在の情報を記載しています。
+                        <p>2023年8月18日現在の情報を記載しています。
                             プライバシーポリシーに掲載している状況は、サイトの機能追加やコンテンツの状態によって変動する可能性がありますので、常に最新の情報をご確認いただくことをおすすめ致します。</p>
                         <h3 id="広告に関する開示事項">広告に関する開示事項</h3>
                         <ul>
@@ -39,7 +39,11 @@ export default function PrivacyPage() {
                         </ul>
                         <h3 id="webフォントに関する開示事項">Webフォントに関する開示事項</h3>
                         <ul>
-                            <li>当サイトのWebフォントは<a href="https://fonts.google.com/">Google Fonts</a>を使用しています。このサービスは<a href="https://www.google.com/">Google</a>を通じて提供されており、Googleはこのサービスを通じて個人情報の収集をする可能性があります。</li>
+                            <li>
+                                当サイトのWebフォントは<a href="https://fonts.google.com/">Google Fonts</a>を使用しています。
+                                このサービスは<a href="https://www.google.com/">Google</a>を通じて提供されていますが、フォントそのものが当サイトのサーバーに埋め込まれており、Googleへの通信は発生いたしません。
+                                したがって、Googleはこのサービスを通じて個人情報の収集をする可能性はありません。
+                            </li>
                         </ul>
                         <h3 id="cookieに関する開示事項">Cookieに関する開示事項</h3>
                         <ul>
@@ -47,7 +51,7 @@ export default function PrivacyPage() {
                         </ul>
                         <hr />
                             <h2 id="privacy-policy">Privacy Policy</h2>
-                            <p>This document is as of July 8, 2023.</p>
+                            <p>This document is as of August 18, 2023.</p>
                             <p>Information on Privacy Policy is subject to change following function addition of website and the status of contents.
                                 I recommend you to check the newest information.</p>
                             <h3 id="disclosure-about-advertisement">Disclosure about advertisement</h3>
@@ -68,7 +72,11 @@ export default function PrivacyPage() {
                             </ul>
                             <h3 id="disclosure-about-web-font">Disclosure about Web font</h3>
                             <ul>
-                                <li>The web fonts on this website are provided by <a href="https://fonts.google.com/">Google Fonts</a>. This service is provided by <a href="https://www.google.com/">Google</a> which may collect personal information through this service.</li>
+                                <li>
+                                    The web fonts on this website are provided by <a href="https://fonts.google.com/">Google Fonts</a>. 
+                                    But since the fonts themselves are embedded in the server of this website, this feature does not make communication with Google.
+                                    So your personal information is not collected with this feature.
+                                </li>
                             </ul>
                             <h3 id="disclosure-about-cookie-or-other-local-storage">Disclosure about cookie or other local storage</h3>
                             <ul>
