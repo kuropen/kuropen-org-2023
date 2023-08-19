@@ -6,7 +6,7 @@
 import React from 'react'
 import FrontPageSection from './frontPageSection'
 import { BriefcaseIcon, MapPinIcon, AcademicCapIcon, ArrowsRightLeftIcon, CommandLineIcon } from '@heroicons/react/24/outline'
-import { SiFacebook, SiInstagram, SiMisskey, SiMastodon, SiTwitter } from '@icons-pack/react-simple-icons'
+import { SiFacebook, SiInstagram, SiMisskey, SiMastodon, SiGithub } from '@icons-pack/react-simple-icons'
 import { Noto_Sans_Math } from 'next/font/google'
 import './frontpage.css'
 import Link from 'next/link'
@@ -71,10 +71,14 @@ export default function Home() {
             <div>
               <a href="https://twitter.com/kuropen_aizu" target="_blank" rel="noopener noreferrer" className="social-btn twitter">
                 <span className={['w-6', 'h-6', 'pb-1', 'text-3xl', mathFont.className].join(' ')}>&#120143;</span>
-                <span>Twitter **</span>
+                <span>X [formerly Twitter] **</span>
               </a>
               <p className="mt-1 text-right text-xs text-gray-500">** Login may be required</p>
             </div>
+            <a href="https://github.com/kuropen" target="_blank" rel="noopener noreferrer" className="social-btn github">
+              <SiGithub className="w-6 h-6" />
+              <span>GitHub</span>
+            </a>
           </div>
         </FrontPageSection>
         <FrontPageSection title="Personal Projects">
@@ -101,9 +105,14 @@ export default function Home() {
           </Link>
         </FrontPageSection>
         <FrontPageSection title="Website Policy">
-          <Link href="/privacy" className="btn">
-            <span>Privacy Policy</span>
-          </Link>
+          <div className="flex flex-col gap-2">
+            <Link href="/privacy" className="btn">
+              <span>Privacy Policy</span>
+            </Link>
+            <a href="https://github.com/kuropen/kuropen-org-2023" target="_blank" rel="noopener noreferrer" className="btn">
+              <span>Source code of this website</span>
+            </a>
+          </div>
         </FrontPageSection>
       </div>
     </main>

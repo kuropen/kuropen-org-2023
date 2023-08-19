@@ -15,10 +15,10 @@ dl {
     @apply flex flex-row gap-2 border rounded-md p-4;
 }
 .btn {
-    @apply border-black dark:border-gray-100 ;
+    @apply border-black dark:border-gray-300;
 }
 .btn:hover {
-    @apply bg-black dark:bg-gray-100 dark:text-black;
+    @apply bg-black dark:bg-gray-300 dark:text-black;
 }
 .social-btn {
     @apply transition;
@@ -53,4 +53,17 @@ dl {
 .mastodon {
     --brand-color: #6364FF;
     --hover-forecolor: #ffffff;
+}
+.github {
+    --brand-color: #181717;
+    --hover-forecolor: #ffffff;
+}
+.twitter {
+    --brand-color: #000000;
+    --hover-forecolor: #ffffff;
+}
+@media(prefers-color-scheme: dark) {
+    .github, .twitter {
+        @apply bg-slate-500;
+    }
 }
