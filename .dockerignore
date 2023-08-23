@@ -1,0 +1,11 @@
+.devcontainer
+.github
+.idea
+LICENSES
+node_modules
+*.license
+**/node_modules
+**/*.license
+apps/kporg-backend
+**/.env
+**/*.vars
