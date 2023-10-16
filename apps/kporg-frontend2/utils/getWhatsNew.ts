@@ -17,7 +17,7 @@ export default async function (params: WhatsNewListSelectOptions = {}) {
     requestUrl.search = qs.stringify(params, {
         encodeValuesOnly: true
     })
-    const apiResponse = await fetch(requestUrl)
+    const apiResponse = await fetch(requestUrl, { next: { revalidate: 600 } })
     const result: WhatsNewContent[] = await apiResponse.json()
     return result
 }
