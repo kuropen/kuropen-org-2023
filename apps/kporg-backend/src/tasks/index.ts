@@ -6,7 +6,6 @@
 import Env from "../@types/env"
 import { CrawlTask } from "../@types"
 import generateQueryParam from "../util/generateQueryParam"
-import NoteTask from "./noteTask"
 import PenguinoneBlogTask from "./penguinoneBlogTask"
 import { WhatsNewContent, WhatsNewContentWithHash } from "../../../../packages/kporg-types"
 import Jssha from "jssha"
@@ -18,7 +17,6 @@ import Jssha from "jssha"
  */
 async function runAggregateTask(env: Env): Promise<(D1Result | WhatsNewContent | undefined)[]> {
 	const tasks: CrawlTask[] = [
-		new NoteTask(),
 		new PenguinoneBlogTask(env.BLOG_BUCKET),
 	]
 
