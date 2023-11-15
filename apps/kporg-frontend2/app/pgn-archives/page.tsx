@@ -20,6 +20,12 @@ export default async function PgnArchivesPage() {
     return (
         <main>
             <nav className="border rounded-md p-2 mb-4"><Link href="/">Home</Link> / Literature</nav>
+            <div>
+                <aside className="bg-yellow-300 text-gray-900 border rounded-md p-2 mb-4 text-xl">
+                    このコンテンツは、2024年2月3日をもちまして公開を終了いたします。<br />
+                    This contents will be closed on 3rd Feb 2024.
+                </aside>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <FrontPageSection title="Literature">
                     <div className="flex flex-col gap-2">
