@@ -17,5 +17,5 @@ binding = "DB"
 database_name = "KPORG_BACKEND_DB"
 database_id = "7052ec1f-9a6b-4a16-85ec-714aa61b78ff"
 
-[triggers]
+#[triggers]
 #crons = [ "0 17 * * *" ]
