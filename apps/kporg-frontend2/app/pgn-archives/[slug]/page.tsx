@@ -43,13 +43,14 @@ export async function generateMetadata({ params }: PgnArchivesDetailPageProps): 
 export default async function PgnArchivesDetailPage({ params }: PgnArchivesDetailPageProps) {
     // Redirect to corresponding page on new site if exists
     const newUrl = `${process.env.NEW_SITE_HOST}/pgn-archives/${params.slug}/`
+    let newResponse
     try {
-        const newResponse = await fetch(newUrl, {method: 'HEAD', redirect: 'error'})
-        if (newResponse.ok) {
-            redirect(newUrl)
-        }
+        newResponse = await fetch(newUrl, {method: 'HEAD', redirect: 'error'})
     } catch (e) {
         // Nothing to do after redirect error
+    }
+    if (newResponse?.ok) {
+        redirect(newUrl)
     }
 
     const contentArray = await getPgnCmsContent({slug: params.slug || ''})
