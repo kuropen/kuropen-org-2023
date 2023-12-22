@@ -22,7 +22,7 @@ export default async function PgnArchivesPage() {
             <nav className="border rounded-md p-2 mb-4"><Link href="/">Home</Link> / Literature</nav>
             <div>
                 <aside className="bg-yellow-300 text-gray-900 border rounded-md p-2 mb-4 text-xl">
-                    このコンテンツは、2024年2月3日をもちまして公開を終了いたします。<br />
+                    このコンテンツは、2024年2月3日をもちまして公開を終了いたします。（<a href="https://kuropen.org/pgn-archives/">新サイト</a>掲出の記事を除く）<br />
                     This contents will be closed on 3rd Feb 2024.
                 </aside>
             </div>

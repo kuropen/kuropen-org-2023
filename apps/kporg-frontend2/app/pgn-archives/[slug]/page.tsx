@@ -14,7 +14,7 @@ import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import DateView from "../dateView"
 import { Metadata } from "next"
-import { notFound } from "next/navigation"
+import { notFound, redirect } from "next/navigation"
 
 type PgnArchivesDetailPageProps = {
     params: {
@@ -35,12 +35,19 @@ export async function generateMetadata({ params }: PgnArchivesDetailPageProps): 
             type: 'article',
             publishedTime: content.attributes.publishedAt,
             modifiedTime: content.attributes.updatedAt,
-            url: `https://kuropen.org/pgn-archives/${content.attributes.slug}`,
+            url: `https://2023.kuropen.org/pgn-archives/${content.attributes.slug}`,
         }
     }
 }
 
 export default async function PgnArchivesDetailPage({ params }: PgnArchivesDetailPageProps) {
+    // 新サイトにHEADリクエストを投げてみて、OKならリダイレクトする
+    const newUrl = `${process.env.NEW_SITE_HOST}/pgn-archives/${params.slug}/`
+    const newResponse = await fetch(newUrl, {method: 'HEAD'})
+    if (newResponse.ok) {
+        redirect(newUrl)
+    }
+
     const contentArray = await getPgnCmsContent({slug: params.slug || ''})
     if (!contentArray) {
         notFound()
