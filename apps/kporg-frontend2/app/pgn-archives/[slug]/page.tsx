@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PgnArchivesDetailPageProps): 
 export default async function PgnArchivesDetailPage({ params }: PgnArchivesDetailPageProps) {
     // 新サイトにHEADリクエストを投げてみて、OKならリダイレクトする
     const newUrl = `${process.env.NEW_SITE_HOST}/pgn-archives/${params.slug}/`
-    const newResponse = await fetch(newUrl, {method: 'HEAD'})
+    const newResponse = await fetch(newUrl, {method: 'HEAD', redirect: 'error'})
     if (newResponse.ok) {
         redirect(newUrl)
     }
